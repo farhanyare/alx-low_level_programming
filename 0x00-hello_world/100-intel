@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Check if a C file is provided as an argument
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <C_FILE>"
+    exit 1
+fi
+
+# Get the C file name from the command line argument
+CFILE="$1"
+
+# Check if the provided C file exists
+if [ ! -f "$CFILE" ]; then
+    echo "Error: C file '$CFILE' not found."
+    exit 1
+fi
+
+# Extract the base name of the C file without extension
+BASENAME="${CFILE%.*}"
+
+# Generate assembly code using GCC and save it to an output file
+gcc -S -masm=intel "$CFILE" -o "$BASENAME.s"
+
+echo "Assembly code generated and saved to '$BASENAME.s'."
