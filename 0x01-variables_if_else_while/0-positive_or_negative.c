@@ -2,11 +2,11 @@
 #include <stdlib.h>
 #include <time.h>
 
-/*
- * main - determining whether random
- * numbers are posative,  negative or zero
- * Retunt: Always 0 (Success)
- */
+/**
+* main - determining whether random
+* numbers are posative,  negative or zero
+* Return: Always 0 (Success)
+*/
 
 int main(void)
 {
